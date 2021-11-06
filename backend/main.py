@@ -2,9 +2,13 @@
 from flask import (Flask, send_from_directory)
 
 from pycoingecko import CoinGeckoAPI
+from flask_cors import CORS
 # coinGECKOAPIBase = https://api.coingecko.com/api/v3
 cg = CoinGeckoAPI()
+
 app = Flask(__name__, static_folder='../client/build')
+CORS(app)
+
 from portfolio import *
 from watchlist import *
 from coin import *
