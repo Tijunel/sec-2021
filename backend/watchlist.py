@@ -9,7 +9,7 @@ class WatchList():
 
   def add_coin(self, coin):
     for existing_coin in self.coins:
-        if existing_coin.get_Coin_Dictionary()['id'] == coin['id']:
+        if existing_coin.id == coin.id:
           return 
     self.coins.append(coin)
 
@@ -17,7 +17,7 @@ class WatchList():
     index_to_remove = -1
     for i, existing_coin in enumerate(self.coins):
       print(coin, existing_coin)
-      if existing_coin.get_Coin_Dictionary()['id'] == coin['id']:
+      if existing_coin.id == coin.id:
         index_to_remove = i
     self.coins.pop(index_to_remove)
 
@@ -45,7 +45,7 @@ def post_watchlist_coin():
     watch_list.add_coin(Coin(coin_to_update))
     return '200'
   elif request.method == 'DELETE':
-    watch_list.remove_coin(coin_to_update)
+    watch_list.remove_coin(Coin(coin_to_update))
     return '200'
 
 

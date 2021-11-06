@@ -10,11 +10,11 @@ class Coin():
     self.name = data['name']
     self.ticker = data['ticker']
     self.current_price = data['current_price']
-    self.market_cap = data['market_cap']
-    self.vol24hr = data['vol24hr']
+    # self.market_cap = data['market_cap']
+    # self.vol24hr = data['vol24hr']
   
   def get_Coin_Dictionary(self):
-    coin_Dict = {'id': self.id, 'name': self.name, 'ticker': self.ticker, 'price': self.current_price,'market_cap': self.market_cap,'vol24hr': self.vol24hr}
+    coin_Dict = {'id': self.id, 'name': self.name, 'ticker': self.ticker, 'price': self.current_price}
     return coin_Dict
 
     
@@ -34,12 +34,14 @@ class Portfolio_Coin(Coin):
     return coin_Portfolio_Dict
 
 
-# def part_d(): Coin profitabiliy
-#   d.) The tracker will create a custom profit/loss algorithm to evaluate real quantitative metrics surrounding a
-#   Crypto. This profit/loss tracker will receive a Crypto name, the purchase amount. It will then calculate a profit/loss
-#   based on the instantaneous value. (Bonus marks: if you can develop a robust algorithm to predict profit/loss based
+#   d.) The tracker will create a custom profit/loss algorithm to evaluate real 
+#   quantitative metrics surrounding a
+#   Crypto. This profit/loss tracker will receive a Crypto name, the purchase amount. 
+#   It will then calculate a profit/loss
+#   based on the instantaneous value. (Bonus marks: if you can develop a robust 
+#   algorithm to predict profit/loss based
 #   on extrapolated “future” values of a specific crypto)
-#    start date and end date
+#   
 #   Solution:
 #   Needs a portfoilio coin aka position and returns the profit in Percent and in USD
 def coin_profitability(coin_id, amount, purchase_date, reference_date = None):
